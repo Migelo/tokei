@@ -23,9 +23,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ matrix.target }}
+        run: |
+          rustup update stable --no-self-update
+          rustup default stable
+          rustup target add ${{ matrix.target }}
+          rustc --version
 
       - name: Install i686 system deps
         if: matrix.target == 'i686-unknown-linux-gnu'
