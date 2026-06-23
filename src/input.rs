@@ -48,12 +48,6 @@ macro_rules! supported_formats {
                 ]
             }
 
-            pub fn all() -> &'static [&'static str] {
-                &[
-                    $( stringify!($name) ),+
-                ]
-            }
-
             pub fn all_feature_names() -> &'static [&'static str] {
                 &[
                     $( $feature ),+

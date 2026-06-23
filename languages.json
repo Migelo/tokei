@@ -1712,8 +1712,7 @@
     "SpecmanE": {
       "name": "Specman e",
       "line_comment": ["--", "//"],
-      "multi_line_comments": [["'>", "<'"]],
-      "extensions": ["e"]
+      "multi_line_comments": [["'>", "<'"]]
     },
     "Spice": {
       "name": "Spice Netlist",

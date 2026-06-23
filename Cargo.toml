@@ -22,6 +22,11 @@ version = "14.0.0"
 rust-version = "1.88"
 edition = "2021"
 
+[lints.rust]
+# `json` is always-on and hardcoded rather than a Cargo feature, but the
+# `supported_formats!` macro still references `cfg(feature = "json")`.
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(feature, values("json"))'] }
+
 [features]
 all = ["cbor", "yaml"]
 cbor = ["dep:hex", "dep:serde_cbor"]
