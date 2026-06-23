@@ -546,6 +546,7 @@ VisualBasic
 VisualStudioProject
 VisualStudioSolution
 Vue
+Vyper
 WebAssembly
 Wolfram
 Xaml
