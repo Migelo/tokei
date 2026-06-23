@@ -431,6 +431,7 @@ Lisp
 LLVM
 Logtalk
 Lua
+Luau
 Lucius
 M1Assembly
 Madlang
