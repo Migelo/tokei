@@ -44,6 +44,10 @@ impl LanguageType {
         self == LanguageType::FortranLegacy
     }
 
+    pub(crate) fn is_diff(self) -> bool {
+        self == LanguageType::Diff
+    }
+
     /// Returns whether the language is "literate", meaning that it considered
     /// to primarily be documentation and is counted primarily as comments
     /// rather than procedural code.

@@ -352,6 +352,7 @@ DAML
 Dart
 DeviceTree
 Dhall
+Diff
 Dockerfile
 DotNetResource
 DreamMaker

@@ -467,6 +467,9 @@
       "quotes": [["\\\"", "\\\""], ["''", "''"]],
       "extensions": ["dhall"]
     },
+    "Diff": {
+      "extensions": ["diff", "patch"]
+    },
     "Djot": {
       "literate": true,
       "important_syntax": ["```"],
