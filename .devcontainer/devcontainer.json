@@ -1,0 +1,12 @@
+{
+	"name": "tokei",
+	"image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"fill-labs.dependi",
+				"tamasfe.even-better-toml"
+			]
+		}
+	}
+}
