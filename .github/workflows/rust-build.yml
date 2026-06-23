@@ -1,4 +1,4 @@
-name: Rust Linux x86
+name: Rust Build
 
 on:
   push:
@@ -13,13 +13,24 @@ env:
 jobs:
   build:
     name: build-${{ matrix.target }}
-    runs-on: ubuntu-24.04
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        target:
-          - x86_64-unknown-linux-gnu
-          - i686-unknown-linux-gnu
+        include:
+          # x86 Linux
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-24.04
+          - target: i686-unknown-linux-gnu
+            os: ubuntu-24.04
+          # ARM64 Linux (native arm runners)
+          - target: aarch64-unknown-linux-gnu
+            os: ubuntu-24.04-arm
+          - target: aarch64-unknown-linux-musl
+            os: ubuntu-24.04-arm
+          # ARM64 macOS (Apple Silicon)
+          - target: aarch64-apple-darwin
+            os: macos-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -29,6 +40,12 @@ jobs:
           sudo dpkg --add-architecture i386
           sudo apt-get update
           sudo apt-get install -y gcc-multilib
+
+      - name: Install musl tools
+        if: endsWith(matrix.target, '-musl')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y musl-tools
 
       - uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
