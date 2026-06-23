@@ -1626,6 +1626,12 @@
       "quotes": [["\\\"", "\\\""], ["#\\\"", "\\\"#"]],
       "verbatim_quotes": [["r##\\\"", "\\\"##"], ["r#\\\"", "\\\"#"]]
     },
+    "Saltstack": {
+      "name": "SaltStack",
+      "line_comment": ["#"],
+      "quotes": [["\\\"", "\\\""], ["'", "'"]],
+      "extensions": ["sls"]
+    },
     "Sass": {
       "line_comment": ["//"],
       "multi_line_comments": [["/*", "*/"]],
